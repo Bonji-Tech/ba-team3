@@ -1,6 +1,11 @@
 pipeline {
     agent any
         stages{
+            stage('1-Clone Repo'){
+                steps{
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'gitub-id', url: 'https://github.com/Bonji-Tech/ba-team3.git']]])
+                }
+            }            
             stage('1-make a left'){
                 steps{
                 sh 'echo "walk..."'
