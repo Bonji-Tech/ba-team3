@@ -6,9 +6,9 @@ pipeline {
                 checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'gitub-id', url: 'https://github.com/Bonji-Tech/ba-team3.git']]])
                 }
             }            
-            stage('1-make a left'){
+            stage('1-script-make a left'){
                 steps{
-                sh 'echo "walk..."'
+                sh 'bash -x /var/lib/jenkins/workspace/$project/directions.sh'
                 sh 'cat /etc/passwd'
                 }
             }
