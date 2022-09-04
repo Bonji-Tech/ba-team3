@@ -8,7 +8,7 @@ pipeline {
             }            
             stage('1-script-make a left'){
                 steps{
-                sh 'bash -x /var/lib/jenkins/workspace/$project/directions.sh'
+                sh 'bash -x /var/lib/jenkins/workspace/ba-team3-pipeline/directions.sh'
                 sh 'cat /etc/passwd'
                 }
             }
